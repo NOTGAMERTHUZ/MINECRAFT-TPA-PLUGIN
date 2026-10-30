@@ -1,0 +1,47 @@
+name: GamerthuzTPA
+version: 1.1.0
+main: com.gamerthuz.tpa.TpaPlugin
+api-version: '26.2'
+author: Gamerthuz
+website: https://github.com/Gamerthuz/GamerthuzTPA
+description: Advanced TPA with a full GUI, warmup, cooldown, block list and optional cost by Gamerthuz
+softdepend: [Vault]
+commands:
+  tpa:
+    description: Open the TPA menu or send a request
+    usage: /tpa [player|requests|settings|toggle|block|unblock]
+    permission: gamerthuz.tpa.use
+  tpahere:
+    description: Ask a player to teleport to you
+    usage: /tpahere <player>
+    permission: gamerthuz.tpa.use
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept [player]
+    aliases: [tpyes]
+    permission: gamerthuz.tpa.use
+  tpdeny:
+    description: Deny a teleport request
+    usage: /tpdeny [player]
+    aliases: [tpadeny, tpno]
+    permission: gamerthuz.tpa.use
+  tpcancel:
+    description: Cancel your outgoing request
+    usage: /tpcancel
+    aliases: [tpacancel]
+    permission: gamerthuz.tpa.use
+  tpatoggle:
+    description: Turn incoming requests on or off
+    usage: /tpatoggle
+    permission: gamerthuz.tpa.use
+permissions:
+  gamerthuz.tpa.use:
+    default: true
+  gamerthuz.tpa.bypass.cooldown:
+    default: op
+  gamerthuz.tpa.bypass.warmup:
+    default: op
+  gamerthuz.tpa.bypass.cost:
+    default: op
+  gamerthuz.tpa.admin:
+    default: op

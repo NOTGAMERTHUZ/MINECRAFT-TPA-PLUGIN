@@ -1,0 +1,68 @@
+# ============================================================
+#  GamerthuzTPA - developed by Gamerthuz
+#  Text uses MiniMessage: https://docs.advntr.dev/minimessage/format.html
+# ============================================================
+settings:
+  request-timeout: 60        # seconds before a request expires
+  cooldown: 10               # seconds between requests
+  warmup: 3                  # seconds to stand still before teleport (0 = instant)
+  cancel-on-move: true
+  cancel-on-damage: true
+  open-gui-on-request: false # default for new players: pop up Accept/Deny GUI
+
+# ---------- World groups (Multiverse) ----------
+# Features work only INSIDE one enabled group, never between two groups.
+# Worlds that are not listed here are disabled. World names must match Multiverse exactly.
+world-groups:
+  survival:
+    display: "Survival"
+    enabled: true
+    worlds: [Survival, Survival_nether, Survival_the_end]
+  lifesteal:
+    display: "Lifesteal"
+    enabled: false
+    worlds: [lifesteal, lifesteal_nether, lifesteal_the_end]
+  pvp:
+    display: "PvP"
+    enabled: false
+    worlds: [pvp]
+
+# Needs Vault + an economy plugin. The player who SENT the request pays.
+cost:
+  amount: 0                  # 0 = free
+
+messages:
+  player-only: "<red>Only players can use this."
+  no-permission: "<red>You don't have permission."
+  player-not-found: "<red>Player not found."
+  cannot-self: "<red>You can't do that to yourself."
+  requests-disabled: "<red><player> is not accepting your teleport requests."
+  cooldown: "<red>Wait <white><seconds>s <red>before sending another request."
+  world-disabled: "<red>Teleport requests are disabled in this world."
+  cross-world-blocked: "<red>You can only teleport between players in the same world group."
+  request-sent-to: "<green>Request sent to <white><player><green>. Expires in <white><seconds>s<green>. Cancel with <yellow>/tpcancel<green>."
+  request-sent-here: "<green>Request sent: <white><player> <green>will be asked to come to you. Expires in <white><seconds>s<green>."
+  request-received-to: "<white><player> <yellow>wants to teleport <gold>to you<yellow>."
+  request-received-here: "<white><player> <yellow>wants you to teleport <gold>to them<yellow>."
+  request-expired: "<gray>Your request to <white><player> <gray>expired."
+  request-expired-target: "<gray>The request from <white><player> <gray>expired."
+  no-pending: "<red>You have no pending request."
+  no-outgoing: "<red>You have no request to cancel."
+  sender-offline: "<red>That player went offline."
+  request-accepted-sender: "<green><player> accepted your request."
+  request-accepted-target: "<green>You accepted <white><player><green>'s request."
+  request-denied-sender: "<red><player> denied your request."
+  request-denied-target: "<yellow>You denied <white><player><yellow>'s request."
+  request-cancelled: "<yellow>Your request to <white><player> <yellow>was cancelled."
+  warmup-start: "<yellow>Teleporting in <white><seconds>s<yellow>. Don't move!"
+  warmup-cancelled: "<red>Teleport cancelled."
+  teleported: "<green>Teleported!"
+  teleport-failed: "<red>Teleport failed."
+  not-enough-money: "<red>You need <white><cost> <red>for this request."
+  cost-charged: "<gray>Charged <white><cost><gray>."
+  toggle-on: "<green>You are now accepting teleport requests."
+  toggle-off: "<yellow>You will no longer receive teleport requests."
+  blocked: "<yellow>Blocked <white><player><yellow>."
+  unblocked: "<green>Unblocked <white><player><green>."
+  reloaded: "<green>Config reloaded."
+  usage-tpahere: "<gray>Usage: <white>/tpahere <player>"
